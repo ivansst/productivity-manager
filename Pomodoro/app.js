@@ -17,6 +17,13 @@ const app = () => {
   outline.style.strokeDasharray = outlineLength;
   outline.style.strokeDashoffset = outlineLength;
 
+  function isMobile() {
+    return (
+      typeof window.orientation !== "undefined" ||
+      navigator.userAgent.indexOf("IEMobile") !== -1
+    );
+  }
+
   sounds.forEach(sound => {
     sound.addEventListener("click", function() {
       song.src = this.getAttribute("data-sound");
@@ -56,7 +63,9 @@ const app = () => {
     if (song.paused && song.muted == true) {
       song.muted = false;
       song.play();
-      video.play();
+      if (isMobile != true) {
+        video.play();
+      }
       play.src = "./svg/pause.svg";
     } else {
       song.muted = true;
