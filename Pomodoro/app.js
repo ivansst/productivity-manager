@@ -65,6 +65,8 @@ const app = () => {
       song.play();
       if (!isMobile) {
         video.play();
+      } else {
+        console.log("raboti");
       }
       play.src = "./svg/pause.svg";
     } else {
