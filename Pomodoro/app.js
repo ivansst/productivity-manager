@@ -65,14 +65,14 @@ const app = () => {
       song.play();
       if (!isMobile) {
         video.play();
-      } else {
-        console.log("raboti");
       }
       play.src = "./svg/pause.svg";
     } else {
       song.muted = true;
       song.pause();
-      video.pause();
+      if (!isMobile) {
+        video.pause();
+      }
       play.src = "./svg/play.svg";
     }
   };
