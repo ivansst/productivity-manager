@@ -96,7 +96,6 @@ body {
   .overlay {
     background: rgb(0, 0, 0, 0.4);
     filter: blur(20px);
-    -webkit-filter: blur(20px);
   }
 }
 
@@ -115,6 +114,5 @@ body {
   .overlay {
     background: rgb(0, 0, 0, 0.4);
     filter: blur(20px);
-    -webkit-filter: blur(20px);
   }
 }
