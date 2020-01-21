@@ -63,7 +63,7 @@ const app = () => {
     if (song.paused && song.muted == true) {
       song.muted = false;
       song.play();
-      if (isMobile != true) {
+      if (!isMobile) {
         video.play();
       }
       play.src = "./svg/pause.svg";
