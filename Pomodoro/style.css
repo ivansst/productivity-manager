@@ -142,7 +142,7 @@ video {
   }
   video {
     display: none;
-    background-color: green;
+    background-color: #696969;
   }
   .player-container svg {
     position: absolute;
@@ -210,6 +210,6 @@ video {
     display: none;
   }
   .app {
-    background-color: lightslategrey;
+    background-color: #353434;
   }
 }
