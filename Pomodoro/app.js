@@ -63,16 +63,16 @@ const app = () => {
     if (song.paused && song.muted == true) {
       song.muted = false;
       song.play();
-      if (!isMobile) {
+      if (isMobile == true) {
+        video.pause();
+      } else {
         video.play();
       }
       play.src = "./svg/pause.svg";
     } else {
       song.muted = true;
       song.pause();
-      if (!isMobile) {
-        video.pause();
-      }
+      video.pause();
       play.src = "./svg/play.svg";
     }
   };
