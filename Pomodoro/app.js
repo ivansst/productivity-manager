@@ -24,8 +24,8 @@ const app = () => {
     );
   }
 
-  sounds.forEach(sound => {
-    sound.addEventListener("click", function() {
+  sounds.forEach((sound) => {
+    sound.addEventListener("click", function () {
       song.src = this.getAttribute("data-sound");
       video.src = this.getAttribute("data-video");
       checkPlaying(song);
@@ -36,7 +36,7 @@ const app = () => {
     checkPlaying(song);
   });
 
-  muteButton.addEventListener("click", function() {
+  muteButton.addEventListener("click", function () {
     if (song.muted) {
       song.muted = false;
     } else {
@@ -44,23 +44,23 @@ const app = () => {
     }
   });
 
-  timeSelect.forEach(option => {
-    option.addEventListener("click", function() {
+  timeSelect.forEach((option) => {
+    option.addEventListener("click", function () {
       duration = this.getAttribute("data-time");
       timeDisplay.textContent = `${Math.floor(duration / 60)}:00`;
     });
   });
 
-  breakSelect.forEach(option => {
-    option.addEventListener("click", function() {
+  breakSelect.forEach((option) => {
+    option.addEventListener("click", function () {
       duration = this.getAttribute("data-time");
       timeDisplay.textContent = `${Math.floor(duration / 60)}:00`;
       song.muted = true;
     });
   });
 
-  const checkPlaying = song => {
-    if (song.paused && song.muted == true) {
+  const checkPlaying = (song) => {
+    if (song.paused || song.muted) {
       song.muted = false;
       song.play();
       if (isMobile == true) {
@@ -97,6 +97,6 @@ const app = () => {
   };
 };
 
-window.onload = function() {
+window.onload = function () {
   app();
 };
