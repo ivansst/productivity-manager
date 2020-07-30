@@ -60,7 +60,7 @@ const app = () => {
   });
 
   const checkPlaying = (song) => {
-    if (song.paused || song.muted) {
+    if (song.paused && song.muted) {
       song.muted = false;
       song.play();
       if (isMobile == true) {
